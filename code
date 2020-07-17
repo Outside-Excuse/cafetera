@@ -1,0 +1,133 @@
+package machine;
+import java.util.Scanner;
+public class CoffeeMachine {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner( System.in );
+                // inicio, con los valores de cada variable predeterminados por el problema 
+int water = 400;
+int milk = 540;
+int coffe_beans = 120;
+int cups = 9;
+int money = 550;
+               //mostrar los datos en pantalla 
+               
+System.out.println("The coffee machine has:");
+System.out.println( water + " " + "of water");
+System.out.println( milk + " " + "of milk");
+System.out.println( coffe_beans + " " + "of coffee beans");
+System.out.println( cups + " " + "of disposable cups");
+System.out.println( money + " " + "of money");
+
+System.out.println();
+System.out.println("Write action (buy, fill, take):");
+              // entrando a la accion
+              
+String word = scanner.next();
+
+switch (word){
+   
+   case "buy":
+   System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
+   int number = scanner.nextInt(); 
+   
+   //For the espresso, the coffee machine needs 250 ml of water and 16 g of coffee beans. It costs $4.
+//For the latte, the coffee machine needs 350 ml of water, 75 ml of milk, and 20 g of coffee beans. It costs $7.
+//And for the cappuccino, the coffee machine needs 200 ml of water, 100 ml of milk, and 12 g of coffee. It costs $6.
+  
+   switch (number){
+       case 1:
+       //expresso
+    water = water - 250;
+    coffe_beans = coffe_beans - 16;
+    cups = cups - 1;
+    money = money + 4;
+    
+   System.out.println("The coffee machine has:");
+System.out.println( water + " " + "of water");
+System.out.println( milk + " " + "of milk");
+System.out.println( coffe_beans + " " + "of coffee beans");
+System.out.println( cups + " " + "of disposable cups");
+System.out.println( money + " " + "of money");
+       break;
+       
+       case 2:
+       //late
+    water = water - 350;
+    milk = milk - 75;
+    coffe_beans = coffe_beans - 20;
+    cups = cups - 1;
+    money = money + 7;
+    
+   System.out.println("The coffee machine has:");
+System.out.println( water + " " + "of water");
+System.out.println( milk + " " + "of milk");
+System.out.println( coffe_beans + " " + "of coffee beans");
+System.out.println( cups + " " + "of disposable cups");
+System.out.println( money + " " + "of money");
+       break;
+       
+       case 3:
+       //capuccino
+           water = water - 200;
+    milk = milk - 100;
+    coffe_beans = coffe_beans - 12;
+    cups = cups - 1;
+    money = money + 6;
+    
+   System.out.println("The coffee machine has:");
+System.out.println( water + " " + "of water");
+System.out.println( milk + " " + "of milk");
+System.out.println( coffe_beans + " " + "of coffee beans");
+System.out.println( cups + " " + "of disposable cups");
+System.out.println( money + " " + "of money");
+       break;
+   }
+   break; 
+   
+   case "fill":
+   System.out.println("Write how many ml of water do you want to add:");
+   int sum_water = scanner.nextInt();
+   
+   System.out.println("Write how many ml of milk do you want to add:");
+   int sum_milk = scanner.nextInt();
+   
+    System.out.println("Write how many grams of coffee beans do you want to add:");
+    int sum_coffee = scanner.nextInt();
+    
+    System.out.println("Write how many disposable cups of coffee do you want to add: ");
+    int sum_cups = scanner.nextInt();
+    
+    water = water + sum_water;
+    milk = milk + sum_milk;
+    coffe_beans = coffe_beans + sum_coffee;
+    cups = cups + sum_cups;
+    
+   System.out.println("The coffee machine has:");
+System.out.println( water + " " + "of water");
+System.out.println( milk + " " + "of milk");
+System.out.println( coffe_beans + " " + "of coffee beans");
+System.out.println( cups + " " + "of disposable cups");
+System.out.println( money + " " + "of money");
+   break;
+   
+   case "take":
+   System.out.println("I gave you" + " " + money);
+   
+   money = money - money;
+   
+      System.out.println("The coffee machine has:");
+System.out.println( water + " " + "of water");
+System.out.println( milk + " " + "of milk");
+System.out.println( coffe_beans + " " + "of coffee beans");
+System.out.println( cups + " " + "of disposable cups");
+System.out.println( money + " " + "of money");
+   break;
+    
+    
+    
+}
+
+       
+    }
+}
